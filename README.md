@@ -1,0 +1,1 @@
+I've added some colors to console output. It looks nice.
