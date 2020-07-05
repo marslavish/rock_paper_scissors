@@ -1,1 +1,1 @@
-I've added some colors to console output. It looks nice.
+I've struggled for a while building this project using DOM. But eventually I solved all the problems. It's all worth it.

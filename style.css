@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-image: url(https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+}
+
+/* Images */
+.images {
+    margin-top: 80px;
+    text-align: center;
+}
+.images img {
+    width: 60px;
+    margin: 6px;
+}
+
+/* All buttons */
+.btns {
+    text-align: center;
+}
+.btn {
+    display: inline-block;
+    width: 60px;
+    padding: 6px;
+    margin: 0 6px 6px 6px;
+    cursor: pointer;
+}
+#playAgain {
+    width: 80px;
+    padding: 6px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    cursor: pointer;
+}
+
+/* Play results */
+.displayResults {
+    display: block;
+    width: 340px;
+    margin: 0 auto;
+    text-align: center;
+}
+#finalResult {
+    margin-bottom: 10px;
+}
+#playRound {
+    margin: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+#roundNumber {
+    font-size: 18px;
+    font-style: italic;
+}
+#playResults {
+    display: inline-block;
+    padding: 3px;
+    border-radius: 3px;
+}
+#scoreboard {
+    display: block;
+    margin-bottom: 10px;
+}
