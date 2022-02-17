@@ -1,1 +1,1 @@
-I've struggled for a while building this project using DOM. But eventually I solved all the problems. It's all worth it.
+Odin project
