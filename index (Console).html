@@ -1,68 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        // Generate computer selection 
-        const computerPlay = () => {
-            const rpc = ['Rock', 'Paper', 'Scissors'];
-            return rpc[Math.floor(Math.random() * rpc.length)];
-        }
+      // Generate computer selection
+      const computerPlay = () => {
+        const rpc = ["Rock", "Paper", "Scissors"];
+        return rpc[Math.floor(Math.random() * rpc.length)];
+      };
 
-        // Play a single round
-        const playRound = (playerSelection, computerSelection) => {
-            playerSelection = prompt("What's your bet?").toLowerCase();
-            computerSelection = computerPlay().toLowerCase();
-            let playerScore = 0;
-            let computerScore = 0;
-            let playResults = '';
-            let playStyle = '';
-            if( playerSelection == 'rock' && computerSelection == 'scissors' || 
-                playerSelection == 'paper' && computerSelection == 'rock' ||
-                playerSelection == 'scissors' && computerSelection == 'paper'
-            ){
-                playResults = `%c You win. ${playerSelection} beats ${computerSelection}`;
-                playerScore = 1;
-                playStyle = 'background: #47C072; color: white; font-size: 16px';
-            } else if (
-                playerSelection == 'rock' && computerSelection == 'paper' || 
-                playerSelection == 'paper' && computerSelection == 'scissors' ||
-                playerSelection == 'scissors' && computerSelection == 'rock'
-            ) {
-                playResults  = `%c You lose. ${computerSelection} beats ${playerSelection}`;
-                computerScore = 1;
-                playStyle = 'background: #FF0789; color: white; font-size: 16px';
-            } else {
-                playResults = '%c It\'s a tie.';
-                playStyle = 'background: #FCB005; color: white; font-size: 16px';
-            }
-            return [playResults, playerScore, computerScore, playStyle];
+      // Play a single round
+      const playRound = (playerSelection, computerSelection) => {
+        playerSelection = prompt("What's your bet?").toLowerCase();
+        computerSelection = computerPlay().toLowerCase();
+        let playerScore = 0;
+        let computerScore = 0;
+        let playResults = "";
+        let playStyle = "";
+        if (
+          (playerSelection == "rock" && computerSelection == "scissors") ||
+          (playerSelection == "paper" && computerSelection == "rock") ||
+          (playerSelection == "scissors" && computerSelection == "paper")
+        ) {
+          playResults = `%c You win. ${playerSelection} beats ${computerSelection}`;
+          playerScore = 1;
+          playStyle = "background: #47C072; color: white; font-size: 16px";
+        } else if (
+          (playerSelection == "rock" && computerSelection == "paper") ||
+          (playerSelection == "paper" && computerSelection == "scissors") ||
+          (playerSelection == "scissors" && computerSelection == "rock")
+        ) {
+          playResults = `%c You lose. ${computerSelection} beats ${playerSelection}`;
+          computerScore = 1;
+          playStyle = "background: #FF0789; color: white; font-size: 16px";
+        } else {
+          playResults = "%c It's a tie.";
+          playStyle = "background: #FCB005; color: white; font-size: 16px";
         }
+        return [playResults, playerScore, computerScore, playStyle];
+      };
 
-        // Play a 5 round game
-        const game = () => {
-            let playerScore = 0;
-            let computerScore = 0;
-            for(let i = 0; i < 5; i++) {
-                const playData = playRound();
-                console.log(`Round ${i+1}:`)
-                console.log(playData[0], playData[3]);
-                playerScore += playData[1];
-                computerScore += playData[2];
-            }
-            if(playerScore > computerScore) {
-                console.log (`%c Final result: ${playerScore}>${computerScore} Congrats! You won the game! `, 'color: white; font-size: 20px; background: black')
-            } else if (playerScore < computerScore) {
-                console.log(`%c Final result: ${playerScore}<${computerScore} You lost the game.`, 'color: white; font-size: 20px; background: black')
-            } else {
-                console.log(`%c Final result: ${playerScore}=${computerScore} It's a tie game.`, 'color: white; font-size: 20px; background: black')
-            }
+      // Play a 5 round game
+      const game = () => {
+        let playerScore = 0;
+        let computerScore = 0;
+        for (let i = 0; i < 5; i++) {
+          const playData = playRound();
+          console.log(`Round ${i + 1}:`);
+          console.log(playData[0], playData[3]);
+          playerScore += playData[1];
+          computerScore += playData[2];
         }
-        game();
+        if (playerScore > computerScore) {
+          console.log(
+            `%c Final result: ${playerScore}>${computerScore} Congrats! You won the game! `,
+            "color: white; font-size: 20px; background: black"
+          );
+        } else if (playerScore < computerScore) {
+          console.log(
+            `%c Final result: ${playerScore}<${computerScore} You lost the game.`,
+            "color: white; font-size: 20px; background: black"
+          );
+        } else {
+          console.log(
+            `%c Final result: ${playerScore}=${computerScore} It's a tie game.`,
+            "color: white; font-size: 20px; background: black"
+          );
+        }
+      };
+      game();
     </script>
-</body>
+  </body>
 </html>
